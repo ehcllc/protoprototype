@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueOccurrence" load_steps=3 format=3 uid="uid://b5638vh0ruxky"]
+
+[ext_resource type="Script" uid="uid://xwa4rmayeykd" path="res://classes/DialogueChoice.gd" id="1_tx4mw"]
+[ext_resource type="Script" uid="uid://dykwpmaekv3mw" path="res://classes/DialogueOccurence.gd" id="2_sgrq2"]
+
+[resource]
+script = ExtResource("2_sgrq2")
+prompt = "
+    You enter a spooky place, inhabited by spooky people, to see a spooky man. He glances spookily at you.
+
+    \"So, you're the one?\" The spook utters in a spookful tone.
+"
+choices = Array[ExtResource("1_tx4mw")]([])
+metadata/_custom_type_script = "uid://dykwpmaekv3mw"

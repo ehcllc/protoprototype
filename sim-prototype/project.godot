@@ -15,6 +15,10 @@ run/main_scene="uid://cr818v877t4ac"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="SIM PROTOTYPE"
+
 [rendering]
 
 renderer/rendering_method="mobile"

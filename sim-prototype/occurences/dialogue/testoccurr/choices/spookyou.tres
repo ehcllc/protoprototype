@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueChoice" load_steps=3 format=3 uid="uid://bulstnhvldih0"]
+
+[ext_resource type="Script" uid="uid://yoital6e40o0" path="res://classes/ChoiceByproduct.gd" id="1_nugk7"]
+[ext_resource type="Script" uid="uid://xwa4rmayeykd" path="res://classes/DialogueChoice.gd" id="2_0e16x"]
+
+[resource]
+script = ExtResource("2_0e16x")
+choice_text = "Spook you, buddy!"
+outcome = "The Outcome"
+byproducts = Array[ExtResource("1_nugk7")]([])
+metadata/_custom_type_script = "uid://xwa4rmayeykd"
