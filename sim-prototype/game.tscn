@@ -1,0 +1,126 @@
+[gd_scene load_steps=9 format=3 uid="uid://cr818v877t4ac"]
+
+[ext_resource type="Script" uid="uid://c61mdy1db5lhv" path="res://character_info.gd" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://p7dknxwnvx4l" path="res://jsontest.gd" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://bmq01yr3nsukl" path="res://button.gd" id="2_e2o6t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2o6t"]
+bg_color = Color(0.61493, 0.162507, 0.256598, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80nbo"]
+bg_color = Color(0.61493, 0.162507, 0.256598, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc0e3"]
+bg_color = Color(0.495888, 0.0844853, 0.15571, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_feb5d"]
+bg_color = Color(0.103744, 0.103744, 0.103743, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_80nbo"]
+font_names = PackedStringArray("Bookman Old Style")
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e2o6t")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Columns" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/Columns"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_80nbo")
+
+[node name="Rows" type="VBoxContainer" parent="PanelContainer/MarginContainer/Columns"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/Columns/Rows"]
+custom_minimum_size = Vector2(700, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fc0e3")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Columns/Rows/PanelContainer2"]
+layout_mode = 2
+script = ExtResource("1_feb5d")
+
+[node name="CharacterPanel" type="Node" parent="PanelContainer/MarginContainer/Columns/Rows"]
+script = ExtResource("1_80nbo")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel"]
+custom_minimum_size = Vector2(300, 500)
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 320.0
+offset_bottom = 520.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_feb5d")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="textRows" type="VBoxContainer" parent="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label1" type="Label" parent="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel/PanelContainer/MarginContainer/textRows"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_80nbo")
+theme_override_font_sizes/font_size = 25
+text = "NAME"
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel/PanelContainer/MarginContainer/textRows"]
+layout_mode = 2
+text = "STRENGTH:"
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel/PanelContainer/MarginContainer/textRows"]
+layout_mode = 2
+text = "SPEED:"
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel/PanelContainer/MarginContainer/textRows"]
+layout_mode = 2
+text = "HEALTH:"
+
+[node name="Label5" type="Label" parent="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel/PanelContainer/MarginContainer/textRows"]
+layout_mode = 2
+text = "PERCEPTION:"
+
+[node name="Label6" type="Label" parent="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel/PanelContainer/MarginContainer/textRows"]
+layout_mode = 2
+text = "APTITUDE:"
+
+[node name="Label7" type="Label" parent="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel/PanelContainer/MarginContainer/textRows"]
+layout_mode = 2
+text = "ATTITUDE:"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/Columns/Rows"]
+layout_mode = 2
+text = "CLICK ME CLICK ME CLICK ME CLICK ME"
+alignment = 0
+script = ExtResource("2_e2o6t")
+
+[node name="suicide challenge" type="Node" parent="."]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/Columns/Rows/Button" to="PanelContainer/MarginContainer/Columns/Rows/CharacterPanel" method="_on_button_pressed"]

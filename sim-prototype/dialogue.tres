@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="Dialogue1" load_steps=2 format=3 uid="uid://dd7v5wqsn2u75"]
+
+[ext_resource type="Script" uid="uid://cykkru7c4qxd7" path="res://suicide_challenge.gd" id="1_shovw"]
+
+[resource]
+script = ExtResource("1_shovw")
